@@ -6,17 +6,26 @@ jobs:
      steps:
        - checkout
        - run: echo "hello world"
-   test:
+       - run:
+          name: test
+          command: echo "hello test"
+
+   deploy-stg:
      docker:
        - image: circleci/node:8.1.4
      steps:
        - checkout
-       - run: echo "hello flow"
-
+       - run: echo "hello staging"
 
 workflows:
   version: 2
-  build_and_test:
+  build_and_staging:
     jobs:
       - build
-      - test
+      - approve-stg:
+          type: approval
+          requires:
+            - build
+      - deploy-stg:
+          requires:
+            - approve-stg
