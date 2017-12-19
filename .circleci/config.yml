@@ -10,7 +10,7 @@ jobs:
           command: echo "hello world"
        - run:
           name: test
-          command: echo "hello test"
+          command: npm run test
 
    deploy-stg:
      docker:
@@ -24,6 +24,10 @@ workflows:
   build_and_staging:
     jobs:
       - build
-      - deploy-stg:
+      - approve-stg:
+          type: approval
           requires:
             - build
+      - deploy-stg:
+          requires:
+            - approve-stg
