@@ -1,0 +1,25 @@
+{
+  "name": "circleci",
+  "version": "1.0.0",
+  "description": "run some scripts",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yqxiaxia/CircleCI-Demo.git"
+  },
+  "author": "yqxia@thoughtworks.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yqxiaxia/CircleCI-Demo/issues"
+  },
+  "homepage": "https://github.com/yqxiaxia/CircleCI-Demo#readme",
+  "devDependencies": {
+    "mocha": "^4.0.1"
+  }
+}
