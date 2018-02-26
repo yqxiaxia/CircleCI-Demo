@@ -15,11 +15,11 @@ jobs:
           name: test
           command: npm run test
 
-  security:
-    machine: true
-    steps:
-      - checkout
-      - run:
+   security:
+     machine: true
+     steps:
+       - checkout
+       - run:
           name: security-checks
           command: bash ci/security-checks.sh
 
