@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const htmlWebpackPlugin = require("html-webpack-plugin");
-const htmlWebpackInlineSource = require("html-webpack-inline-source-plugin");
+const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 
 const config = {
   entry: `${__dirname}/index.jsx`,
@@ -29,13 +29,7 @@ const config = {
         inlineSource: '.(js)$'
       }
     ),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
-    }),
-    new htmlWebpackInlineSource()
+    // new HtmlWebpackInlineSourcePlugin()
   ],
   devServer: {
     port: 3000
