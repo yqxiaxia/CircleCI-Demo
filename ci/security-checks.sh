@@ -4,6 +4,7 @@
 set +e
 
 ALPINE_VERSION=3.4
+HAWKEYE_VERSION=0.18.0
 ISSUES_REPORT_FILE=hawkeye_report.json
 
 
@@ -13,7 +14,7 @@ function create_container_with_code() {
 }
 
 function run_hawkeye_on_container_code() {
-  docker run --volumes-from target-code --name hawkeye stono/hawkeye scan /target --json ${ISSUES_REPORT_FILE}
+  docker run --volumes-from target-code --name hawkeye stono/hawkeye:${HAWKEYE_VERSION} scan /target --json ${ISSUES_REPORT_FILE}
   hawkeye_return=$?
 }
 
