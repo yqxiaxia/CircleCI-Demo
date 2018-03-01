@@ -1,5 +1,5 @@
-let first = require('../src/first');
-let assert = require('assert');
+import first from '../src/first';
+import assert from 'assert';
 
 describe('test in backend', () => {
     it('should return 2 when 1 add 1' , () => {
