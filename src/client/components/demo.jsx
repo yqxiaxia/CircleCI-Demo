@@ -1,10 +1,13 @@
-import "babel-polyfill";
-import React from "react"
+import 'babel-polyfill';
+import React from 'react';
 
 export default class Demo extends React.Component {
   render() {
     return(
-      <div>This is a demo</div>
-    )
+      <div>
+        <h1>this is a title</h1>
+        <p>this is a paragraph</p>
+      </div>
+    );
   }
 }
